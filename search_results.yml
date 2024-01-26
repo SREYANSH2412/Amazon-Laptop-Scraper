@@ -1,0 +1,35 @@
+# YAML Configuration for Search Results
+# This YAML file defines the selectors and patterns used to scrape search result data from a webpage.
+
+# Each key-value pair in this file represents a specific data point to be extracted.
+# For example, 'title' might map to the CSS selector used to find the title of a product in a search result.
+
+products:
+    css: 'div[data-component-type="s-search-result"]'
+    xpath: null
+    multiple: true
+    type: Text
+    children:
+        title:
+            css: 'h2 a.a-link-normal.a-text-normal'
+            xpath: null
+            type: Text
+        url:
+            css: 'h2 a.a-link-normal.a-text-normal'
+            xpath: null
+            type: Link
+        rating:
+            css: 'div.a-row.a-size-small span:nth-of-type(1)'
+            xpath: null
+            type: Attribute
+            attribute: aria-label
+        reviews:
+            css: 'div.a-row.a-size-small span:nth-of-type(2)'
+            xpath: null
+            type: Attribute
+            attribute: aria-label
+        price:
+            css: 'span.a-price:nth-of-type(1) span.a-offscreen'
+            xpath: null
+            type: Text
+        

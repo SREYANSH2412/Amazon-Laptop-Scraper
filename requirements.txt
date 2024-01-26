@@ -1,0 +1,4 @@
+selectorlib
+requests
+jsonlines
+gzip

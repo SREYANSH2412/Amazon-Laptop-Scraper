@@ -1,0 +1,57 @@
+# YAML Configuration for Web Scraping Selectors
+# This file contains various CSS selectors used for scraping data from webpages.
+
+# Selectors are categorized based on their usage, like product details, pricing information, etc.
+# Each selector is mapped to a specific element in the webpage's HTML structure.
+
+SKU id:
+    css: 'th:contains("ASIN") + td.prodDetAttrValue'
+    type: Text
+Product name:
+    css: 'th:contains("Generic Name") + td.prodDetAttrValue'
+    type: Text
+Product title:
+    css: '#productTitle'
+    type: Text
+Description:
+    css: '#featurebullets_feature_div'
+    type: Text
+Category:
+    css: 'th:contains("Generic Name") + td.prodDetAttrValue'
+    type: Text
+MRP:
+    css: 'span.a-size-small.aok-offscreen'
+    type: Text
+Selling price:
+    css: 'span.a-price-whole'
+    type: Text
+Discount:
+    css: '[class*=savingsPercentage]'
+    type: Text
+Weight:
+    css: 'th:contains("Item Weight") + td.prodDetAttrValue'
+    type: Text
+Brand name:
+    css: 'span.a-size-base.po-break-word'
+    type: Text
+Image url:
+    css: '.imgTagWrapper img'
+    type: Attribute
+    attribute: data-a-dynamic-image
+Laptop Specifications:
+  css: 'div#productOverview_feature_div table.a-normal.a-spacing-micro tr'
+  multiple: true
+  type: Text
+  children:
+    Spec Name:
+      css: 'td.a-span3 .a-text-bold'
+      type: Text
+    Spec Value:
+      css: 'td.a-span9'
+      type: Text
+Delivery Fee:
+    css: 'div#deliveryBlock_feature_div span[data-csa-c-type="element"] a.a-link-normal'
+    type: Text
+Estimated Delivery Time:
+    css: 'div#deliveryBlock_feature_div span.a-text-bold'
+    type: Text
